@@ -44,14 +44,12 @@ public class TElementoAB<T> implements  IElementoAB<T>{
                     resultado = this.getHijoIzq().buscar(unaEtiqueta);
                 }
             } else { //La etiqueta que enviamos por parametro es mayor a la actual.
-                if(this.getHijoDer() != null) {
-                    resultado = this.getHijoDer().buscar(unaEtiqueta);
-                }
+                    if(unaEtiqueta.compareTo(this.getEtiqueta()) > 0) {
+                        if(this.getHijoDer() != null) {
+                            resultado = this.getHijoDer().buscar(unaEtiqueta);
+                        }
+                    }
             }
-            System.out.println("La clave está en el arbol");
-        }
-        if(resultado == null) {
-            System.out.println("La clave no está en el arbol");
         }
         return resultado;
      }
